@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xml:lang="ja" lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app" class="container" v-cloak>
+        <div class="page-header">
+            <h4>Java寿司ript ~Vue編~</h4>
+        </div>
+        <div class="filterSelectorContainer">
+            <select class="btn btn-default btn-lg dropdown-toggle mb30" v-model="selected">
+                <option  v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
+            </select>
+        </div>
+        <div>
+            <ul class="list-group">
+             <li class="list-group-item" v-for="sushi in filterSushis">{{ sushi.name }} : {{ sushi.price }}円</li>
+            </ul>
+            <div class="total panel" v-show="selected != 0">
+              <span>合計金額 : <span class="total__data">{{ totalPrice }} 円</span></span>
+              <span>総カロリー : <span class="total__data">{{ totalCal }} kcal</span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="app2" class="panel">
+      <p>
+        <router-link to="/user/foo">/user/foo</router-link>
+        <router-link to="/user/bar">/user/bar</router-link>
+      </p>
+      <router-view></router-view>
+    </div>
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script> -->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js'></script> -->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0/vue.js'></script> -->
+<script src='https://unpkg.com/vue@2.0.1/dist/vue.min.js'></script>
+<script src='https://unpkg.com/vue-router@2.0.0'></script>
+<script src="//cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

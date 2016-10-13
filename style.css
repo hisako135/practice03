@@ -1,0 +1,18 @@
+v-cloak {
+    display: none;
+}
+
+.filterSelectorContainer {
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.total {
+    font-size: 18px;
+    font-weight:bold;
+    text-align: center;
+}
+
+.total__data {
+    color: red;
+}
